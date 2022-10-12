@@ -3,7 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Readers from './containers/Readers';
-import Reader from './containers/Readers';
+import Reader from './containers/Reader';
 
 function App() {
   return (
