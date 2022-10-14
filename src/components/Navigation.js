@@ -12,17 +12,27 @@ const link = {
 
 const Navigation = () => {
     return (
-        <div>
+        <nav>
             <NavLink
                 to="/"
                 style={link}
             >Home</NavLink>
 
             <NavLink
-            to="/readers"
-            style={link}
-            >Readers</NavLink>
-        </div>
+                to="/places"
+                style={link}
+            >Cities</NavLink>
+
+            <NavLink
+                to="/places/new"
+                style={link}
+            >Add City</NavLink>
+
+            <NavLink
+                to="/attractions"
+                style={link}
+            >Attractions</NavLink>
+        </nav>
     )
 }
 
