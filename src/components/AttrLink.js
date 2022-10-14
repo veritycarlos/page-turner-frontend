@@ -7,7 +7,7 @@ const AttrLink = ({attraction}) => {
     <br/>
       <NavLink to={`/attractions/${attraction.id}`}>
         {attraction.name}
-      </NavLink> {attraction.place.city}, TX
+      </NavLink> {attraction.place.city}
     </div>
   )
 }
