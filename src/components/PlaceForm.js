@@ -22,25 +22,24 @@ function PlaceForm() {
 //             setPlaces(data)
 //         })
 // }, [])
-  const handleSubmit = e => {
-    e.preventDefault();
-    const headers = {
-      "Accept": 'application/json',
-      "Content-Type": "application/json"
+    const handleSubmit = e => {
+      e.preventDefault();
+      const headers = {
+        "Accept": 'application/json',
+        "Content-Type": "application/json"
+      }
+      const body = {city: city }
+      const options = {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(body)
+      }
+      fetch("http://localhost:9292/places", options)
+        .then(r => r.json())
+        .then(data => {
+          navigate('/places')
+        })
     }
-    const body = {city: city }
-    const options = {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(body)
-    }
-    fetch("http://localhost:9292/places", options)
-      .then(r =>r.json())
-      .then(data => {
-        console.log(data)
-        navigate('/places')
-      })
-  }
 
   return (
     <div>

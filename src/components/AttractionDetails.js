@@ -5,7 +5,7 @@ const AttractionDetails = () => {
     const [attraction, setAttraction] = useState({
         place:[]
     })
-    
+
     const params = useParams();
   
     useEffect(() => {

@@ -3,7 +3,7 @@ import PlaceLink  from '../components/PlaceLink'
 
 const Places = () => {
     const [places, setPlaces] = useState([])
-    const [placeFormFlag, setPlaceFormFlag] = useState(false)
+    // const [placeFormFlag, setPlaceFormFlag] = useState(false)
 
     useEffect(() => {
         fetch('http://localhost:9292/places')
@@ -20,9 +20,9 @@ const Places = () => {
         <div>
             <br/>
             <h1>Cities</h1>
-            <ul>
+            <h3>
                 {placesList}
-            </ul>
+            </h3>
         </div>
     )
 }

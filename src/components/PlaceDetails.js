@@ -6,7 +6,7 @@ const PlaceDetails = () => {
     const [place, setPlace] = useState({
         attractions: []
     })
-    const [attractionFormFlag, setAttractionFormFlag] = useState(false)
+    // const [attractionFormFlag, setAttractionFormFlag] = useState(false)
 
     const params = useParams();
   
