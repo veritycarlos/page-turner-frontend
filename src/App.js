@@ -10,6 +10,7 @@ import AttrList from './components/AttrList';
 import PageNotFound from './components/PageNotFound';
 import AttractionDetails from './components/AttractionDetails';
 import NewAttraction from './components/NewAttraction';
+import EditPlace from './components/EditPlace';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/places/:placeId/attractions/new" element={<NewAttraction/>} />
           <Route exact path="/places" element= {<Places/>} />
           <Route path="/places/:id" element= {<PlaceDetails/>} />
+          <Route path="/places/:id/edit" element={<EditPlace/>} />
           <Route exact path="/places/new" element={<PlaceForm/>} />
           <Route path="*" element= {<PageNotFound/>} />
         </Routes>

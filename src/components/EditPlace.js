@@ -1,27 +1,26 @@
 import React, {useState, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 function EditPlace() {
   const [city, setCity]=useState("");
+  const [ place, setPlace ] = useState("");
+  const {id}=useParams();
   const navigate = useNavigate();
-
-//   const handleChange = (e) => {
-//     setValues({
-//         ...values, [e.target.name]: e.target.value
-//     })
-// }
 
   const handleChange = e => {
     setCity(e.target.value)
   }
-//   useEffect(() => {
-//     fetch('http://localhost:9292/places')
-//         .then(res => res.json())
-//         .then(data => {
-//             console.log(data)
-//             setPlaces(data)
-//         })
-// }, [])
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/places/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setPlace(data)
+            setCity(data.city)
+        })
+    }, [])
+
     const handleSubmit = e => {
       e.preventDefault();
       const headers = {
@@ -30,28 +29,28 @@ function EditPlace() {
       }
       const body = {city: city }
       const options = {
-        method: 'POST',
+        method: 'PATCH',
         headers: headers,
         body: JSON.stringify(body)
       }
-      fetch("http://localhost:9292/places", options)
+      fetch(`http://localhost:9292/places/${id}`, options)
         .then(r => r.json())
         .then(data => {
-          navigate('/places')
+          navigate(`/places/${id}`)
         })
     }
 
   return (
     <div>
       <br/>
-      <h1>Edit City</h1>
+      <h1>Edit {place.city}</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="city" >City:</label>
           <input type="text" id="city" value={city} onChange={handleChange} autoFocus= {true}/>
         </div>
         <br/>
-        <input type="submit" value="Add City"></input>
+        <input type="submit" value="Update City"></input>
       </form>
     </div>
   )
