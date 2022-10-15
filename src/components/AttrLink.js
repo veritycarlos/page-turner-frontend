@@ -8,7 +8,7 @@ const AttrLink = ({attraction, place, deleteAttraction }) => {
         <nav>
             <NavLink to={`/attractions/${attraction.id}`}>
                 {attraction.name}
-            </NavLink>  {place.city}, TX  - <button onClick={deleteAttraction}>Delete</button>
+            </NavLink>  {place.city}, TX  - <button onClick={ () => deleteAttraction( attraction.id )}>Delete</button>
         </nav>
         <br/>
     </div>

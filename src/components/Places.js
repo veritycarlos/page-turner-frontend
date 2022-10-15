@@ -14,7 +14,18 @@ const Places = () => {
             })
     }, [])
 
-    const placesList = places.map( p => <PlaceLink key={p.id} place={p} />)
+    const deleteCity = async id => {
+        const resp = await fetch(`http://localhost:9292/places/${ id }`, {method: "DELETE"})
+        const data = await resp.json();
+
+        removeCity(id)
+    }
+
+    const removeCity = id => {
+        setPlaces(places.filter(c => c.id != id))
+    }
+
+    const placesList = places.map( p => <PlaceLink key={p.id} place={p} deleteCity={deleteCity}/>)
 
     return (
         <div>

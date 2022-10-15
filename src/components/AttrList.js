@@ -14,7 +14,19 @@ const AttrList = () => {
             })
     }, [])
 
-    const attrsList = attrs.map( a => <AttrLink key={a.id} attraction={a} place={a.place}/>)
+    const deleteAttraction = async id => {
+        const resp = await fetch(`http://localhost:9292/attractions/${ id }`, {method: "DELETE"})
+        const data = await resp.json();
+
+        removeAttraction( id );
+
+    }
+
+    const removeAttraction = id => {
+        setAttrs(attrs.filter( a => a.id != id))
+    }
+
+    const attrsList = attrs.map( a => <AttrLink key={a.id} attraction={a} place={a.place} deleteAttraction={deleteAttraction} />)
 
     return (
         <div>
