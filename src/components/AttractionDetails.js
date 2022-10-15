@@ -39,6 +39,7 @@ const AttractionDetails = () => {
             <p>{attraction.address}</p>
             <p>City: <NavLink to={`/places/${attraction.place.id}`}>{attraction.place.city}</NavLink> </p>
             <button onClick={ () => deleteAttraction( attraction.id )}>Delete</button>
+            <p><NavLink to={`/attractions/${attraction.id}/edit`}>Edit Location</NavLink></p>
         </div>
     )
 }
