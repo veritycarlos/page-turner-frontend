@@ -9,9 +9,7 @@ const NewAttraction = () => {
     })
     const {placeId} = useParams();
     const navigate = useNavigate();
-    // const [attraction, setAttraction] = useState({
-    //     place:[]
-    // })
+
     useEffect(() => {
         fetch(`http://localhost:9292/places/${placeId}`)
         .then(res => res.json())
@@ -27,25 +25,6 @@ const NewAttraction = () => {
             [e.target.name]: e.target.value
         })
     }
-
-
-    //     const headers = {
-    //       "Accept": 'application/json',
-    //       "Content-Type": "application/json"
-    //     }
-    //     const body = {city: city }
-    //     const options = {
-    //       method: 'POST',
-    //       headers: headers,
-    //       body: JSON.stringify(body)
-    //     }
-    //     fetch("http://localhost:9292/places", options)
-    //       .then(r =>r.json())
-    //       .then(data => {
-    //         console.log(data)
-    //         navigate('/places')
-    //       })
-    //   }
 
     const handleSubmit = e => {
         e.preventDefault();

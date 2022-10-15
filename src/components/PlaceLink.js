@@ -1,13 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const PlaceLink = ({place, deleteCity}) => {
+const PlaceLink = ({place}) => {
   return (
     <div>
       <nav>
         <NavLink to={`/places/${place.id}`}>
           {place.city}
-        </NavLink> - <button onClick={ () => deleteCity( place.id )}>Delete</button>
+        </NavLink> 
       </nav>
       <br/>
     </div>

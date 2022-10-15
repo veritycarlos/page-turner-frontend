@@ -5,23 +5,10 @@ function PlaceForm() {
   const [city, setCity]=useState("");
   const navigate = useNavigate();
 
-//   const handleChange = (e) => {
-//     setValues({
-//         ...values, [e.target.name]: e.target.value
-//     })
-// }
-
   const handleChange = e => {
     setCity(e.target.value)
   }
-//   useEffect(() => {
-//     fetch('http://localhost:9292/places')
-//         .then(res => res.json())
-//         .then(data => {
-//             console.log(data)
-//             setPlaces(data)
-//         })
-// }, [])
+
     const handleSubmit = e => {
       e.preventDefault();
       const headers = {
