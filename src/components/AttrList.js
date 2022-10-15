@@ -14,7 +14,7 @@ const AttrList = () => {
             })
     }, [])
 
-    const attrsList = attrs.map( a => <AttrLink key={a.id} attraction={a} />)
+    const attrsList = attrs.map( a => <AttrLink key={a.id} attraction={a} place={a.place}/>)
 
     return (
         <div>

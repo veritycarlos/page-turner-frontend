@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import Attraction from '../components/Attraction'
+import { useParams, NavLink } from 'react-router-dom'
+import AttrLink from './AttrLink'
 
-const Place = () => {
+const PlaceDetails = () => {
     const [place, setPlace] = useState({
         attractions: []
     })
@@ -32,19 +32,19 @@ const Place = () => {
     //     })
     // }
 
-    const attractions = place.attractions.map(a => <Attraction key={a.id} attraction={a} />)
+    const attractions = place.attractions.map(a => <AttrLink key={a.id} attraction={a} place={place}/>)
 
     return (
         <div>
             <br/>
-            <h2>{place.city}</h2>
-            <hr/>
-            <h3>Attractions:</h3>
-            <br/>
-            {attractions}
-            <br/>
+            <h1>{place.city}</h1>
+            <h2>Attractions:</h2>
+            <h3>
+                {attractions}
+                <p><NavLink to={`/places/${place.id}/attractions/new`}>Add New Attraction</NavLink></p>
+            </h3>
         </div>
     )
 }
 
-export default Place
+export default PlaceDetails

@@ -1,14 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const AttrLink = ({attraction}) => {
+const AttrLink = ({attraction, place}) => {
   return (
     <div>
-    <br/>
-      <NavLink to={`/attractions/${attraction.id}`}>
-        {attraction.name}
-      </NavLink> {attraction.place.city}
+        <nav>
+            <NavLink to={`/attractions/${attraction.id}`}>
+                {attraction.name}
+            </NavLink>  {place.city}, TX 
+        </nav>
+        <br/>
     </div>
+    
   )
 }
 

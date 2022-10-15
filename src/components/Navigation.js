@@ -12,27 +12,30 @@ const link = {
 
 const Navigation = () => {
     return (
-        <nav>
-            <NavLink
-                to="/"
-                style={link}
-            >Home</NavLink>
+        <>
+        <br/>
+            <nav>
+                <NavLink
+                    to="/"
+                    style={link}
+                >Home</NavLink>
 
-            <NavLink
-                to="/places"
-                style={link}
-            >Cities</NavLink>
+                <NavLink
+                    to="/places"
+                    style={link}
+                >Cities</NavLink>
 
-            <NavLink
-                to="/places/new"
-                style={link}
-            >Add City</NavLink>
+                <NavLink
+                    to="/places/new"
+                    style={link}
+                >Add City</NavLink>
 
-            <NavLink
-                to="/attractions"
-                style={link}
-            >Attractions</NavLink>
-        </nav>
+                <NavLink
+                    to="/attractions"
+                    style={link}
+                >Attractions</NavLink>
+            </nav>
+        </>
     )
 }
 
