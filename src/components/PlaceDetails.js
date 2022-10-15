@@ -41,6 +41,7 @@ const PlaceDetails = () => {
             <h2>Attractions:</h2>
             <h3>
                 {attractions}
+                <p><NavLink to={`/places/${place.id}/edit`}>Edit Location</NavLink></p>
                 <p><NavLink to={`/places/${place.id}/attractions/new`}>Add New Attraction</NavLink></p>
             </h3>
         </div>
